@@ -47,16 +47,30 @@ for ($i = 1; $i <= 100; $i++) {
     }
 }
 
-$temperature = [ "Venezia" => 16, "Bari" => 32, "Roma" => 28, "Napoli" => 30, "Milano" => 13, "Palermo" => 14, "Torino" => 24, "Lecce" => 27, "Genova" => 30, "Catania" => 11, "Cosenza" => 9, ];
+$temperature = [
+    "Venezia" => 16,
+    "Bari" => 32,
+    "Roma" => 28,
+    "Napoli" => 30,
+    "Milano" => 13,
+    "Palermo" => 14,
+    "Torino" => 24,
+    "Lecce" => 27,
+    "Genova" => 30,
+    "Catania" => 11,
+    "Cosenza" => 9,
+];
 
-foreach ($temperature as città => $temperatura) {
- $condizione = " ";
-if ($temperatura >25) {
-    echo "Fa molto caldo";
-} elseif ($temperatura >=15) {
-    echo "Fa caldo";
-} elseif ($temperatura <15) {
-    echo "Fa freddo";
-}
-    echo "a $città fa $condizione con $temperatura";
+foreach ($temperature as $città => $gradi) {
+    $condizione = " ";
+
+    if ($gradi > 25) {
+        $condizione = "Fa molto caldo";
+    } elseif ($gradi >= 15) {
+        $condizione = "Fa caldo";
+    } elseif ($gradi < 15) {
+        $condizione = "Fa freddo";
+    }
+
+    echo "A $città fa $condizione con $gradi";
 }
