@@ -165,6 +165,47 @@ $leone = new Mammals();
 $uccello = new Birds();
 
 
+class Car { 
+    private $num_telaio; 
+
+    public function getNumTelaio() {
+        return $this->num_telaio;
+    }
+
+    public function setNumTelaio($num_telaio) {
+        $this->num_telaio = $num_telaio;
+    }
+} 
+
+class Fiat extends Car { 
+    protected $license; 
+    protected $color; 
+
+    public function getLicense() {
+        return $this->license;
+    }
+
+    public function setLicense($license) {
+        $this->license = $license;
+    }
+
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setColor($color) {
+        $this->color = $color;
+    }
+
+    public function printCarInfo() {
+        echo "La mia macchina e' Opel, con targa " . $this->getLicense() . " e numero di Telaio " . $this->getNumTelaio() . PHP_EOL;
+    }
+}
+
+$fiatCar = new Fiat();
+$fiatCar->setLicense("ND 123 OJ");
+$fiatCar->setNumTelaio("1234");
+$fiatCar->printCarInfo();
 
 
 
